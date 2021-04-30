@@ -1,0 +1,10 @@
+@echo off
+:loop
+title Word Counter
+cls
+set /p word=Type A Word:
+cls
+set /p num=How Many Time Would You Like To See It?
+FOR /L %%A IN (1,1,%num%) DO echo %word%
+pause>nul
+goto loop

@@ -1,0 +1,31 @@
+# Hello if you're a human! Here is the robots.txt file for owlman.neocities.org
+# If you don't know what this is, the tl;dr is that it tells web crawlers 
+# and other web robots what they can and can not view/index.
+
+# For my robots.txt I am telling all crawlers that they can't view 
+# Who is Who in ASCII Art and a robots.txt example that I used on this page:
+# https://owlman.neocities.org/library/archive.html
+
+# You can see that I have also told a crawler by the name of ia_archiver that
+# they can view all of the site bar the robots.txt example.
+# The ia_archiver is a bot from The Internet Archive, 
+# a 501(c)(3) non-profit library I hold very dear to my heart.
+
+# If you have any questions about what robots.txt are, I would view the websites
+# listed to help you better understand
+
+# The Web Robots Pages: http://www.robotstxt.org
+# Robots exclusion standard: https://en.wikipedia.org/wiki/Robots_exclusion_standard
+# How to Write a Robots.txt File: https://support.microsoft.com/en-us/help/217103/how-to-write-a-robots-txt-file
+
+# Last updated: 04/12/17 @ 16:20
+# Last updated: 10/12/17 @ 21:05
+
+User-agent: *
+Disallow: /Who_in_Ascii_Art.html
+Disallow: /ascii.html
+Disallow: /odds/robotstxtexample.txt
+
+User-agent: ia_archiver
+Allow: /
+Disallow: /odds/robotstxtexample.txt

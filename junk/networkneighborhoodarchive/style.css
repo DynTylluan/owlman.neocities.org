@@ -1,0 +1,36 @@
+/* Network Neighborhood Archive CSS */
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Tahoma;
+  text-align: center;
+  width: 600px;
+  margin: auto;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+hr { border: 0; height: 1px; background: white; }
+
+p {
+  font-size: 12px;
+}
+
+a {
+  color: #AAA;
+  text-decoration: none;
+}
+
+table {
+  text-align: left;
+}

@@ -1,0 +1,44 @@
+Title                   : Station   
+Filename                : station.WAD
+Author                  : Eric Harris
+Email Address           : REBDOOMER@aol.com
+Misc. Author Info       : This is just one of my awesome deathmatch WADS
+                          so be sure to check out my WAD page for the others!
+Description             : This level takes place in an abandoned space
+                          station out in the middle of some funky galaxy.
+                          The level has some pretty cool parts in it.
+                          Like the swimming pool and the 2 doors to nothing.
+                          You have to see them to know what I'm talkin about.
+Additional Credits to   : The creators of Edmap, BSP, and Wintex. Excaluber
+                          for giving me some ideas about what to put in.
+                          The creator of "fragland" for the pool idea.
+                          And, of course, the creators of DOOM2!
+* Play Information *
+
+Episode and Level #     : map01
+Single Player           : Yes
+Cooperative 2-4 Player  : I guess, to go sight-seeing
+Deathmatch 2-4 Player   : YES
+Difficulty Settings     : Not implemented
+New Sounds              : YES
+New Graphics            : YES, i love the new sky!
+New Music               : Nope
+Demos Replaced          : None
+
+* Construction *
+
+Base                    : New level from scratch
+Editor(s) used          : Edmap, BSP, and WINTEX
+Known Bugs              : Well, I can't find any yet. e-mail me if
+                          you come across one!
+
+The only thing people can do with this WAD is play it and distribute it.
+
+
+FTP sites:http://members.aol.com/rebdoomer/rebpage.htm
+
+BBS numbers:?
+
+Other:  Well, probably where you got it from. duh.  Or email me and
+ask for it.
+  -note  Ask for my awesome multi-level PATCH, REALDOOM!!!!

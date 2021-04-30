@@ -1,0 +1,1 @@
+javascript: setInterval(function () { document.title = ["sammich", "SAMMICH!!!", "8==D"][(Math.random() * 3) | 0] }, 500);  onmousemove=function($){document.elementFromPoint($.clientX,$.clientY).style.backgroundColor="hsl("+((Math.random()*360)|0)+",99%,50%)"};

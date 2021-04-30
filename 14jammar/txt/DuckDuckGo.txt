@@ -1,0 +1,15 @@
+<html>
+  <head>
+  <Img src="http://i.imgur.com/b7cC57h.png">
+
+    <body background="http://i.imgur.com/jm8pdbi.png">
+<p><font face="verdana">
+    <meta charset="UTF-8">
+    <title>Search The Site</title>
+  <center> 
+<P><img src="http://i.imgur.com/BsIkYoi.png">
+<P><img src="PICK ANY DUCK  FROM HERE: https://duck.co/help/settings/holiday-logos"></a>
+<P><iframe src="https://duckduckgo.com/search.html?site=FULL_SITE_NAME&prefill=Search NAME OF SITE" style="overflow:hidden;margin:0;padding:0;width:408px;height:40px;" frameborder="0"></iframe>
+
+  </body>
+</html>

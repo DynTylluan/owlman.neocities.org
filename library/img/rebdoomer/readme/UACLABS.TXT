@@ -1,0 +1,75 @@
+Title                   : U.A.C. LABS   
+Filename                : uaclabs.zip
+Author                  : Eric Harris
+Email Address           : REBDOOMER@aol.com
+Misc. Author Info       : Whatsup all you doomers out there! REB here,
+                          bringin you another kick-ass doom2 wad! This one
+                          took a damn long time to do, so send me some bloody
+                          credit man! Sorry the file is so damn big, but you
+                          know how it is when you change sprites...well, you
+                          should know if you've every made wads like this.
+                          Enjoy the new death frames, made em all myself!
+                          =DO NOT GO TO ANY OTHER LEVEL BESIDES THE 2 IN=
+                          =THIS WAD, MANY SPRITES WHERE DELETED IN THE  =
+                          =WAD TO MAKE IT AS SMALL AS I COULD. SO SOME  =
+                          =MAPS MAY HAVE DELETED SPRITES IN THEM AND IT =
+                          =WILL CRASH DOOM2. so dont do it, man.        =
+Description\Story       : OK, here goes:  After defeating the demons on
+                          Earth, you learn of a new terror. Phobos, where
+                          this hellish battle all began, has been taken over
+                          again! When you were fighting hell on Earth, the
+                          demon back-up crew decided to pay a visit to Phobos
+                          again. No problem, right? All the installations
+                          where already destroyed by you and the first attack
+                          right? Yeah, that parts right, but half the
+                          surviving humans from earth took refuge there!
+                          We just re-did the structures to fit our needs,
+                          and moved in again. Bad idea. Those gates were
+                          still active. Sooo aah, chalk up another kill for
+                          the demons. After the 2nd attack on phobos, only
+                          99% of the human population is left. Once you
+                          emerged from hell, you took the first ship you
+                          could to phobos. Once again, there were no
+                          survivors. Now its PAYBACK TIME! Those godamned
+                          alien bastards are gonna get one helluva BFG blast
+                          up their FREAKIN ASS! You land on the other side
+                          of phobos. Where the humans landed for the 2nd
+                          time. Your mission is to destroy the 2 main gates,
+                          and destroy the platoon of demons at the main
+                          teleporter from phobos to Earth. Use the maps,
+                          you'll need them to find all the hidden secrets and
+                          doors. Beware of the 2 gates, the ARE still active,
+                          and more demons might come through any second.
+                          The platoon guarding the teleporter out is VERY
+                          large, so beware. Good luck marine, and dont forget,
+                          KILL 'EM AAAAALLLL!!!!!
+Additional Credits to   : The creators of Edmap, Wintex, BSP, and doom2.
+
+Episode and Level #     : map01 and 2 ONLY!
+Single Player           : Yes
+Cooperative 2-4 Player  : Yes, very fun. challenging too!
+Deathmatch 2-4 Player   : yep
+Difficulty Settings     : well, just stick with ultra violence.
+New Sounds              : yep
+New Graphics            : yep
+New Music               : yep
+Demos Replaced          : nope
+
+Base                    : New level from scratch
+Editor(s) used          : Edmap, BSP, and WINTEX
+Known Bugs              : Well, I can't find any yet. e-mail me if
+                          you come across one!
+
+
+
+Authors may NOT use this level as a base to build additional levels.
+You may NOT change a damn thing with this WAD, if you do, i will blow you up.
+And it will be cool. 
+
+FTP sites:http://members.aol.com/rebdoomer/rebpage.htm
+
+BBS numbers:?
+
+Other:  Well, probably where you got it from. duh.  Or email me and
+ask for it.
+      -note  Ask for my awesome PATCH called, REALDOOM.zip!!!!

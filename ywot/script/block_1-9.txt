@@ -1,0 +1,1 @@
+http://javascript:a=alert("Instructions: \n*Use 1-9 to create blocks *");(I=$("input")[2]).oninput=function(){0<(V=I.value)&10>V&&(I.value="?\u2588\u2593\u2592\u2591\u2580\u2584\u258c\u2590\u25a0"[V])};

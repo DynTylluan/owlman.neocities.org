@@ -1,0 +1,254 @@
+<html>
+  <head>
+<link rel="icon" type="image/png" href="/img/OM_Logo.gif" />
+  <BODY BGCOLOR="#000000" TEXT="#00FF00" LINK="#00FF00" ALINK="#00FF00" VLINK="#00FF00">
+<title>OWLMAN</title><PRE>/* Script settings below */
+var canvLength = 8000; /* firefox max: 8000 probably, google chrome max: 10000 probably. appears to be 4000 (firefox) on my alt computer. */
+var canvHeight = 8000;
+var RATIO = 1; /* 1 being normal. on Firefox, the smallest ratio without text disappearing completely is 0.03072916666 for me. */
+var breakLoop = 0; /* type breakLoop = 1 in the console to halt the script */
+var chunkSizeLEN = 20; /* chunk area must be 400 or less. */
+var chunkSizeHEI = 20;
+var scanSize = 2; /* distance to look. It is the width and height to scan. chunk size determined by chunkSizeLEN/HEI */
+var startX = 0; /* starting position */
+var startY = 0;
+/* actual code below */
+var txtCol, ownCol, memCol, pblCol;
+try {
+    var styleGRP = $("#world").context.styleSheets[2].rules;
+    var txtCol = $("#world").context.styleSheets[2].rules[0].cssText.split("#yourworld { colour: ")[1].split("; }")[0];
+    var ownCol = $("#world").context.styleSheets[2].rules[1].cssText.split("div.world-container.writability-ADMIN .tilecont { background-colour: ")[1].split("; }")[0];
+    var memCol = $("#world").context.styleSheets[2].rules[2].cssText.split("div.world-container.writability-MEMBERS .tilecont { background-colour: ")[1].split("; }")[0];
+    var pblCol = $("#world").context.styleSheets[2].rules[3].cssText.split("div.world-container.writability-PUBLIC .tilecont { background-colour: ")[1].split("; }")[0];
+} catch (e) {
+    console.log(e);
+    if (e !== "") {
+        var txtCol = "#000000";
+        var ownCol = "#ddd";
+        var memCol = "#eee";
+        var pblCol = "#ffffff";
+        var wld = window.location.pathname.substr(1);
+        var datad = jQuery.ajax({
+            type: "GET",
+            async: false,
+            url: "http://www.yourworldoftext.com/world_style.css?world=" + wld
+        }).responseText;
+        var splits = datad.split(";}");
+        txtCol = splits[0].split("#yourworld{colour:")[1];
+        ownCol = splits[1].split("div.world-container.writability-ADMIN .tilecont{background-colour:")[1];
+        memCol = splits[2].split("div.world-container.writability-MEMBERS .tilecont{background-colour:")[1];
+        pblCol = splits[3].split("div.world-container.writability-PUBLIC .tilecont{background-colour:")[1];
+        console.log([txtCol, ownCol, memCol, pblCol]);
+    }
+}
+startX = -startX; /* Fix the coordinates. */
+startY = -startY;
+/*
+	Proper coordinate system:
+	startX = -startX;
+	//Just leave startY as it is.
+*/
+document.getElementsByTagName("html")[0].innerHTML = "&lt;html>&lt;meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">&lt;canvas id=\"myCanvas\" width=\"" + canvLength + "\" height=\"" + canvHeight + "\" style=\"border:1px solid #000000;\">&lt;/canvas>&lt;/html>";
+var st1 = Math.floor(canvLength / 2);
+var st2 = Math.floor(canvHeight / 2);
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var opt = state.worldModel.writability;
+/* below function is from Mozilla Developer Network */
+function fixedCharAt(str, idx) {
+    var ret = '';
+    str += '';
+    var end = str.length;
+    var surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+    while ((surrogatePairs.exec(str)) !== null) {
+        var li = surrogatePairs.lastIndex;
+        if (li - 2 &lt; idx) {
+            idx++;
+        } else {
+            break;
+        }
+    }
+    if (idx >= end || idx &lt; 0) {
+        return '';
+    }
+    ret += str.charAt(idx);
+    if (/[\uD800-\uDBFF]/.test(ret) && /[\uDC00-\uDFFF]/.test(str.charAt(idx + 1))) {
+        /* Go one further, since one of the "characters" is part of a surrogate pair */
+        ret += str.charAt(idx + 1);
+    }
+    return ret;
+}
+window.scroll((canvLength / 2) - (160 * 4) + (9 * RATIO), (canvHeight / 2) - (144 * 3) - (8 * RATIO));
+/* scroll to center of canvas with tile ajdustment */
+function SPIRAL(X, Y) {
+    var x = 0,
+        y = 0,
+        dx = 0,
+        dy = -1;
+    var t = Math.max(X, Y);
+    var maxI = t * t;
+    var i = 0;
+    var tileScanner = setInterval(function() {
+        if (breakLoop == 1) {
+            clearInterval(tileScanner);
+        }
+        if ((-X / 2 &lt;= x) && (x &lt;= X / 2) && (-Y / 2 &lt;= y) && (y &lt;= Y / 2)) {
+            var x001 = (x - 1);
+            var y001 = (y - 1);
+            var stA = (x001 * chunkSizeLEN) - startX; /* Magic behind chunks */
+            var stB = (y001 * chunkSizeHEI) - startY;
+            var enA = (x001 * chunkSizeLEN) + (chunkSizeLEN - 1) - startX;
+            var enB = (y001 * chunkSizeHEI) + (chunkSizeHEI - 1) - startY;
+            var tile = jQuery.ajax({
+                type: "GET",
+                async: false,
+                url: window.location.pathname,
+                data: {
+                    fetch: 1,
+                    min_tileY: stB,
+                    min_tileX: stA,
+                    max_tileY: enB,
+                    max_tileX: enA,
+                    v: 3
+                },
+                dataType: "json",
+            }).responseText;
+            /* console.log(tile) */
+            var data = JSON.parse(tile);
+            var length = Object.keys(data).length;
+            for (var f = 0; f &lt; length; f++) {
+                if (data[Object.keys(data)[f]] !== null) {
+                    var content = data[Object.keys(data)[f]].content;
+                    var s = Object.keys(data)[f].split(",");
+                    var yC = parseInt(s[0]) + startY;
+                    var xC = parseInt(s[1]) + startX;
+                    var yt = ((yC * 144) * RATIO) + st2;
+                    var xt = ((xC * 160) * RATIO) + st1;
+                    var links = {};
+
+                    function lk() {
+                        var tile = data[Object.keys(data)[f]];
+                        if (tile !== null) {
+                            if (Object.keys(tile.properties.cell_props).length !== 0) {
+                                var keys = Object.keys(tile.properties.cell_props);
+                                var length = keys.length;
+                                for (var i = 0; i &lt; length; i++) {
+                                    var cc = Object.keys(tile.properties.cell_props)[i];
+                                    var cL = tile.properties.cell_props[cc];
+                                    var kes = Object.keys(cL).length;
+                                    if (kes !== 0) {
+                                        for (var o = 0; o &lt; kes; o++) {
+                                            var key = Object.keys(cL);
+                                            var ydd = Object.keys(tile.properties.cell_props)[i];
+                                            var xdd = key[o];
+                                            var lnk = tile.properties.cell_props[ydd][xdd];
+                                            if (lnk.link.type == "url") {
+                                                var url = lnk.link.url;
+                                                if (links[ydd] === undefined) {
+                                                    links[ydd] = {};
+                                                }
+                                                links[ydd][xdd] = {
+                                                    type: "url"
+                                                };
+                                            }
+                                            if (lnk.link.type == "coord") {
+                                                var link_tileY = lnk.link.link_tileY;
+                                                var link_tileX = lnk.link.link_tileX;
+                                                if (links[ydd] === undefined) {
+                                                    links[ydd] = {};
+                                                }
+                                                links[ydd][xdd] = {
+                                                    type: "coord"
+                                                };
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    lk();
+                    ctx.font = (16 * RATIO) + "px Courier New";
+                    var xmm = 0;
+                    var ymm = 0;
+                    if (data[Object.keys(data)[f]].properties.writability === null) {
+                        if (opt === 0) {
+                            ctx.fillStyle = pblCol;
+                        }
+                        if (opt == 1) {
+                            ctx.fillStyle = memCol;
+                        }
+                        if (opt == 2) {
+                            ctx.fillStyle = ownCol;
+                        }
+                    }
+                    if (data[Object.keys(data)[f]].properties.writability === 0) {
+                        ctx.fillStyle = pblCol;
+                    }
+                    if (data[Object.keys(data)[f]].properties.writability == 1) {
+                        ctx.fillStyle = memCol;
+                    }
+                    if (data[Object.keys(data)[f]].properties.writability == 2) {
+                        ctx.fillStyle = ownCol;
+                    }
+                    ctx.fillRect(xt, yt, 160 * RATIO, 144 * RATIO);
+                    for (var fg = 0; fg &lt; 128; fg++) {
+                        var lnk = 0;
+                        var gh = fixedCharAt(content, fg);
+                        if (links[ymm] !== undefined) {
+                            if (links[ymm][xmm] !== undefined) {
+                                if (links[ymm][xmm].type == "url") {
+                                    lnk = 1;
+                                    ctx.fillStyle = "blue";
+                                    ctx.fillRect(((xmm * 10) * RATIO) + xt, (((ymm * (18)) * RATIO) + ((13 * RATIO) + RATIO)) + yt, 10 * RATIO, 1 * RATIO);
+                                }
+                                if (links[ymm][xmm].type == "coord") {
+                                    lnk = 1;
+                                    ctx.fillStyle = "green";
+                                    ctx.fillRect(((xmm * 10) * RATIO) + xt, (((ymm * (18)) * RATIO) + ((13 * RATIO) + RATIO)) + yt, 10 * RATIO, 1 * RATIO);
+                                }
+                            }
+                        }
+                        if (lnk === 0) {
+                            ctx.fillStyle = txtCol;
+                        }
+                        ctx.fillText(gh, ((xmm * 10) * RATIO) + xt, (((ymm * 18) * RATIO) + (13 * RATIO)) + yt);
+                        xmm++;
+                        if (xmm >= 16) {
+                            xmm = 0;
+                            ymm++;
+                        }
+                    }
+                } else {
+                    var s = Object.keys(data)[f].split(",");
+                    var yC = parseInt(s[0]) + startY;
+                    var xC = parseInt(s[1]) + startX;
+                    var yt = ((yC * 144) * RATIO) + st2;
+                    var xt = ((xC * 160) * RATIO) + st1;
+                    if (opt === 0) {
+                        ctx.fillStyle = pblCol;
+                    }
+                    if (opt == 1) {
+                        ctx.fillStyle = memCol;
+                    }
+                    if (opt == 2) {
+                        ctx.fillStyle = ownCol;
+                    }
+                    ctx.fillRect(xt, yt, 160 * RATIO, 144 * RATIO);
+                }
+            }
+        }
+        if ((x == y) || ((x &lt; 0) && (x == -y)) || ((x > 0) && (x == 1 - y))) {
+            t = dx;
+            dx = -dy;
+            dy = t;
+        }
+        x += dx;
+        y += dy;
+        i++;
+        if (i >= maxI) {
+            clearInterval(tileScanner);
+        }
+    }, 1);
+}
+SPIRAL(scanSize, scanSize);

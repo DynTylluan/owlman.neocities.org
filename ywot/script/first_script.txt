@@ -1,0 +1,5 @@
+javascript: /*******Instructions*********
+*Create a bookmark with this code as the URL
+*Click on it while on YWOT
+*Click stuff (click again to close if it is an embed)
+*Go to /jerrymedia for stuff to click on */ (function () { function clickinate() { var written_by = "Jerry Starfield. January 2013."; var link = $('a[href*=javascript]'); $.each(link, function () { var url = $(this).attr("href"); $(this).attr("href", url.replace(/^http:\/\//, "")); }); } clickinate(); $(document).on('DOMNodeInserted', clickinate); $("#announce").text("Links are now clickable!").show().delay(2000).hide(1000); })()

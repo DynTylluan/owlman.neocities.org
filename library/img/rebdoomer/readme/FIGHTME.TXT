@@ -1,0 +1,50 @@
+================================================================
+Title                   : Mortal Kombat Doom!   
+Filename                : fightme.WAD
+Author                  : Eric Harris
+Email Address           : REBDOOMER@aol.com
+Misc. Author Info       : It took me about 2 hours to make this
+                          level, so enjoy it!
+Description             : One big room, with 4 platforms in it.
+                          Hop down and duke it out with the
+                          other players!  Then fight again!
+
+Additional Credits to   : Mortal Kombat for the idea of hand to
+                          hand fighting.  Except in doom this
+                          time.  And of course, the creators of
+                          Doom2, thanks dudes!
+================================================================
+
+* Play Information *
+
+Episode and Level #     : good 'ole map 1
+Single Player           : Yes
+Cooperative 2-4 Player  : Yes, boring as hell though
+Deathmatch 2-4 Player   : Yes
+Difficulty Settings     : Not implemented
+New Sounds              : all of em!
+New Graphics            : No
+New Music               : yep. sorry, no MK theme song=(
+Demos Replaced          : None
+
+* Construction *
+
+Base                    : New level from scratch
+Editor(s) used          : Edmap, BSP, and Wintex4.3
+NO Known Bugs
+
+
+* Copyright / Permissions *
+
+The only thing you can do with this file is play it and distribute.
+
+
+* Where to get this WAD *
+
+FTP sites:?
+
+BBS numbers:?
+
+Other:well, probably where you got it from. duh.  Or email me and
+ask for it.
+                     ASK FOR MY AWESOME PATCH CALLED REALDOOM!!!

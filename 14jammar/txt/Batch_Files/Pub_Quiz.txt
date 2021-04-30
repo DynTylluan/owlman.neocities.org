@@ -1,0 +1,331 @@
+@echo off
+title Pub Quiz
+color 0a
+ 
+:menustartgame
+cls
+echo Welcome to Pub Quiz
+echo ***************************************
+echo.
+echo From here you can:
+echo.
+echo 1. Start the Game
+echo 2. Info
+echo 3. Exit
+echo 4. Nothing
+set /p menuchoie=">"
+ 
+if %menuchoie% == 1 goto startgame
+if %menuchoie% == 2 goto info
+if %menuchoie% == 3 goto exit
+goto menustartgame
+ 
+:info
+cls
+title Information on the Quiz
+color 0b
+pause
+echo This quiz is the best quiz ever!!!11!1
+echo.
+echo 1. Start the quiz
+echo 2. Exit
+
+
+set /p menuchoie=">"
+
+if %menuchoie% == 1 goto startgamePUBQUIX
+if %menuchoie% == 2 goto exitDodgemsAD
+
+ 
+:startgame
+cls
+title Please enter your name
+color 1a
+echo Please enter your name...
+echo.
+ 
+set  /p player=
+echo.
+echo Press any key to start, the quiz
+pause >nul
+goto q1
+ 
+:q1
+cls
+title Question one
+cls
+echo Question one
+echo ***************************************
+echo.
+echo The national animal of Scotland is...
+echo.
+echo 1. A Bald eagle
+echo 2. A Duck
+echo 3. A Unicorn
+echo 4. A Wolf
+ 
+echo.
+set /p ans1=
+ 
+if %ans1%  == 1 goto wr1
+if %ans1%  == 2 goto wr1
+if %ans1%  == 3 goto cr1
+if %ans1%  == 4 goto wr1
+goto q1
+ 
+:wr1
+cls
+title Wrong
+color 8b
+echo Sorry m8, that's not the national animal of Scotland
+pause >nul
+goto menustartgame
+ 
+:cr1
+cls
+title Corret!
+color 9a
+echo Corret, %player%! The national animal of Scotland is the unicorn
+echo.
+echo Press any key to continue
+pause >nul
+goto q2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+:q2
+cls
+title Question two
+cls
+echo Question two
+echo ***************************************
+echo.
+echo The World's Oldest Newspaper that is still running is...
+echo.
+echo 1. The Times
+echo 2. Berrow's Worcester Journal
+echo 3. Play Boy
+echo 4. The King's Boy
+echo.
+set /p ans2=
+ 
+if %ans2%  == 1 goto wr2
+if %ans2%  == 2 goto cr2
+if %ans2%  == 3 goto wr2
+if %ans2%  == 4 goto wr2
+goto q2
+ 
+:wr2
+cls
+title Wrong
+color 8b
+echo Nope, that's wrong
+echo.
+echo Press any key to return to the menu
+pause >nul
+goto menustartgame
+ 
+:cr2
+cls
+title Corret!
+color 9a
+echo Well done, %player%, the oldest newspaper is indeed the Worcester Journal
+echo.
+echo Press any key to continue
+pause >nul
+goto q3
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+:q3
+cls
+title Question three
+cls
+echo Question three
+echo ***************************************
+echo.
+echo How long was The 100 Year war between England and France?
+echo.
+echo 1. 100 years
+echo 2. 99 years
+echo 3. 116 years
+echo 4. 101 years
+echo.
+set /p ans3=
+ 
+if %ans3%  == 1 goto wr3
+if %ans3%  == 2 goto wr3
+if %ans3%  == 3 goto cr3
+if %ans3%  == 4 goto wr3
+goto q5
+ 
+:wr3
+cls
+title Wrong
+color 8b
+echo I would of said that too
+echo.
+echo Press any key to return to the menu
+pause >nul
+goto menustartgame
+ 
+:cr3
+cls
+title Corret!
+color 9a
+echo Well done, %player%! The 100 Year War really did last 116 years
+echo.
+echo Press any key to continue
+pause >nul
+goto q4
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+:q4
+cls
+title Question fore
+cls
+echo Question fore
+echo ***************************************
+echo.
+echo Paul McCartney, "Weird Al" Yankovic and 50 Cent
+echo have all been on what show?
+echo.
+echo 1. The Simpsons
+echo 2. Family Guy
+echo 3. The Flintstones
+echo 4. Space 1999
+echo.
+set /p ans4=
+ 
+if %ans4%  == 1 goto cr4
+if %ans4%  == 2 goto wr4
+if %ans4%  == 3 goto wr4
+if %ans4%  == 4 goto wr4
+goto q5
+ 
+:wr4
+cls
+title Wrong
+color 8b
+echo Oh man! your're wrong!
+echo.
+echo Press any key to return to the menu
+pause >nul
+goto menustartgame
+ 
+:cr4
+cls
+title Corret!
+color 9a
+echo Corret, many, many guest stars have been on The Simpsons
+echo.
+echo Press any key to continue
+pause >nul
+goto q5
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+:q5
+cls
+title Question five
+cls
+echo Question five
+echo ***************************************
+echo.
+echo Is this a good quiz?
+echo.
+echo 1. No
+echo 2. No
+echo 3. No
+echo 4. No
+echo.
+set /p ans5=
+ 
+if %ans5%  ==  goto cr5
+if %ans5%  ==  goto cr5
+if %ans5%  ==  goto cr5
+if %ans5%  ==  goto cr5
+goto win
+ 
+ 
+:cr5
+cls
+title Corret!
+color 9a
+echo Well done, %player%, we agree!
+echo.
+echo Press any key to continue
+pause >nul
+goto win
+ 
+ 
+ 
+ 
+:win
+cls
+title Welldone, you have won!
+coloe 0a
+ping localhost -n 1
+color 0b
+ping localhost -n 1
+color 0c
+ping localhost -n 1
+color 0d
+ping localhost -n 1
+color 0e
+ping localhost -n 1
+color 0f
+cls
+echo.
+echo A winner is you!
+echo.
+echo I hope you liked this quiz!
+echo Thank's for playing this dumb game!
+echo.
+pause
+cls
+echo Return to menu? (Y/N)
+set /p rtrn2menu=
+ 
+if %rtrn2menu% == y goto menu
+if %rtrn2menu% == n exit
+goto win
+ 
+ 
+echo

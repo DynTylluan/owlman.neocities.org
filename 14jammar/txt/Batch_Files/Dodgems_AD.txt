@@ -1,0 +1,226 @@
+@echo off
+title Dodgems AD
+:menu
+cls
+color 0a
+echo Welcome to Dodgems AD
+echo ***************************************
+echo.
+echo From here you can:
+echo.
+echo 1. Start the Game
+echo 2. Info
+echo 3. Exit
+echo 4. Full Screen
+echo 5. Nothing
+
+set /p menuchoie=">"
+
+if %menuchoie% == 1 goto startgame
+if %menuchoie% == 2 goto info
+if %menuchoie% == 3 goto exit
+if %menuchoie% == 4 goto full
+if %menuchoie% == 5 goto ann
+goto menu
+
+:info
+cls
+title Information on the Game
+color 0b
+echo How to play:
+echo You play as the at sign ("@")
+echo To move right press "A" to move left press "D"
+echo Try and not hit the stars ("*") if you do hit
+echo Them then you will die
+echo Good luck ;-)
+echo.
+echo ***************************************
+echo This game was made by Gwalin on Instructables.com
+echo instructables.com/id/Batch-Game-Dodgems/
+echo.
+echo 1. Start the Game
+echo 2. Exit
+
+
+set /p menuchoie=">"
+
+if %menuchoie% == 1 goto startgame
+if %menuchoie% == 2 goto exit
+
+
+:startgame
+title Dodgems AD
+setlocal enabledelayedexpansion
+set loop=1
+set background= 
+set pPos=85
+goto reset
+:reset
+title Dodgems AD
+color 0f
+set icon1=1
+set icon2=52
+set icon3=23
+set icon4=74
+set icon5=55
+set icon6=26
+set icon7=47
+set icon8=8
+set icon9=49
+set icon10=60
+set v%loop%=%background%
+if %loop% == 9 echo 10
+if %loop% == 18 echo 20
+if %loop% == 27 echo 30
+if %loop% == 36 echo 40
+if %loop% == 45 echo 50
+if %loop% == 54 echo 60
+if %loop% == 63 echo 70
+if %loop% == 72 echo 80
+if %loop% == 81 echo 90
+if %loop% == 90 echo 100
+if %loop% == 90 goto display
+set /a loop=%loop%+1
+goto reset
+:die
+color 0c
+cls
+echo Hahahaha you died
+echo.
+echo 1. Play Again
+echo 2. Menu
+echo 3. Exit
+echo.
+set /p menuchoie=">"
+if %menuchoie% == 1 goto reset
+if %menuchoie% == 3 goto exit
+if %menuchoie% == 2 goto menu
+
+goto die
+:display
+if %pPos% == %icon1% goto die
+if %pPos% == %icon2% goto die
+if %pPos% == %icon3% goto die
+if %pPos% == %icon4% goto die
+if %pPos% == %icon5% goto die
+if %pPos% == %icon6% goto die
+if %pPos% == %icon7% goto die
+if %pPos% == %icon8% goto die
+if %pPos% == %icon9% goto die
+if %pPos% == %icon10% goto die
+set v%pPos%=@
+set v%icon1%=*
+set v%icon2%=*
+set v%icon3%=*
+set v%icon4%=*
+set v%icon5%=*
+set v%icon6%=*
+set v%icon7%=*
+set v%icon8%=*
+set v%icon9%=*
+set v%icon10%=*
+cls
+echo ############
+echo #%v1%%v2%%v3%%v4%%v5%%v6%%v7%%v8%%v9%%v10%#
+echo #%v11%%v12%%v13%%v14%%v15%%v16%%v17%%v18%%v19%%v20%#
+echo #%v21%%v22%%v23%%v24%%v25%%v26%%v27%%v28%%v29%%v30%#
+echo #%v31%%v32%%v33%%v34%%v35%%v36%%v37%%v38%%v39%%v40%#
+echo #%v41%%v42%%v43%%v44%%v45%%v46%%v47%%v48%%v49%%v50%#
+echo #%v51%%v52%%v53%%v54%%v55%%v56%%v57%%v58%%v59%%v60%#
+echo #%v61%%v62%%v63%%v64%%v65%%v66%%v67%%v68%%v69%%v70%#
+echo #%v71%%v72%%v73%%v74%%v75%%v76%%v77%%v78%%v79%%v80%#
+echo #%v81%%v82%%v83%%v84%%v85%%v86%%v87%%v88%%v89%%v90%#
+echo ############
+choice /c adr /t 1 /d r /n
+if %errorlevel% == 1 goto left
+if %errorlevel% == 2 goto right
+if %errorlevel% == 3 goto drop
+:left
+if %pPos% == 81 goto display
+set v%pPos%=%background%
+set /a pPos=%pPos% - 1
+goto drop
+:right
+if %pPos% == 90 goto display
+set v%pPos%=%background%
+set /a pPos=%pPos% + 1
+goto drop
+:drop
+set v%icon1%=%background%
+set v%icon2%=%background%
+set v%icon3%=%background%
+set v%icon4%=%background%
+set v%icon5%=%background%
+set v%icon6%=%background%
+set v%icon7%=%background%
+set v%icon8%=%background%
+set v%icon9%=%background%
+set v%icon10%=%background%
+set /a icon1=%icon1%+10
+set /a icon2=%icon2%+10
+set /a icon3=%icon3%+10
+set /a icon4=%icon4%+10
+set /a icon5=%icon5%+10
+set /a icon6=%icon6%+10
+set /a icon7=%icon7%+10
+set /a icon8=%icon8%+10
+set /a icon9=%icon9%+10
+set /a icon10=%icon10%+10
+if %icon1% == 91 set icon1=1
+if %icon2% == 92 set icon2=2
+if %icon3% == 93 set icon3=3
+if %icon4% == 94 set icon4=4
+if %icon5% == 95 set icon5=5
+if %icon6% == 96 set icon6=6
+if %icon7% == 97 set icon7=7
+if %icon8% == 98 set icon8=8
+if %icon9% == 99 set icon9=9
+if %icon10% == 100 set icon10=10
+goto display
+
+
+
+
+:exit
+title Thanks for playing!
+cls
+color 0d
+echo Thank you for playing Dodgems AD
+echo ***************************************
+echo.
+pause
+goto hell
+
+:ann
+cls
+echo I SAID NOTHING WOULD HAPPEN!!!
+echo YOU WILL PAY FOR THIS!!1
+pause
+:spam
+title %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+goto spam
+
+
+
+:full
+mode 1000
+cls
+color 0a
+echo Welcome to Dodgems AD
+echo ***************************************
+echo.
+echo From here you can:
+echo.
+echo 1. Start the Game
+echo 2. Info
+echo 3. Exit
+echo 4. Nothing
+
+set /p menuchoie=">"
+
+if %menuchoie% == 1 goto startgame
+if %menuchoie% == 2 goto info
+if %menuchoie% == 3 goto exit
+if %menuchoie% == 4 goto ann
+goto full

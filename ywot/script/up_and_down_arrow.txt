@@ -1,0 +1,1 @@
+http://javascript:t="Instructions: \n-Use up and down arrow keys to type diagonally\n-Ctrl+A to change character\nEnter character to type";a=prompt(t);(I=$("input")[2]).onkeydown=function(b){"38"==b.keyCode||"40"==b.keyCode?I.value=a:"65"==b.which&&b.ctrlKey&&(a=prompt(t))};

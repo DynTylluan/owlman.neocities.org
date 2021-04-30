@@ -1,0 +1,28 @@
+  body {
+  	margin: auto;
+  	font-family: Verdana;
+  	background-image: url(https://designchoices.neocities.org/img/bg.jpg);
+  	background-position: top center;
+  	background-repeat: no-repeat;
+  	background-color: black;
+  	color: #BBB;
+  	font-size: 12px;
+  	width: 800px;
+  	text-align: justify;
+  	margin-top: 25px;
+  	margin-bottom: 25px;
+  }
+  
+  a {
+  	color: yellow;
+  	text-decoration: underline;
+  }
+  
+  b {
+  	color: whitesmoke;
+  }
+  
+  h1 {
+  	color: white;
+  	text-transform: uppercase;
+  }

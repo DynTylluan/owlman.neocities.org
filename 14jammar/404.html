@@ -1,0 +1,120 @@
+
+<html>
+
+<head>
+
+<script language="JavaScript">
+
+
+  <!-- HIDE FROM OLD BROWSERS
+
+
+function disable_right_click(e)
+  {
+      var browser = navigator.appName.substring ( 0, 9 );
+      var event_number = 0;
+
+      if (browser=="Microsoft")
+          event_number = event.button;
+      else if (browser=="Netscape")
+          event_number = e.which;
+
+      if ( event_number==2 || event_number==3 )
+          {
+          confirm ("You have right clicked, Windows must be restarted for the changes to take affect");
+          return (false);
+          }
+
+      return (true);
+  }
+
+  function check_mousekey ()
+  {
+      var mouse_key = 93;
+      var keycode = event.keyCode;
+
+      if ( keycode == mouse_key )
+          alert ( "Mouse Key Is Disabled" );
+  }
+
+  function trap_page_mouse_key_events ()
+  {
+      var browser = navigator.appName.substring ( 0, 9 );
+
+      document.onmousedown = disable_right_click;
+
+      if ( browser == "Microsoft" )
+          document.onkeydown = check_mousekey;
+      else if ( browser == "Netscape" )
+          document.captureEvents( Event.MOUSEDOWN );
+  }
+
+  window.onload = trap_page_mouse_key_events;
+
+
+  // END HIDING -->
+
+</script>
+
+
+<style>
+a:link			{font:8pt/11pt verdana; color:red}
+a:visited		{font:8pt/11pt verdana; color:#4e4e4e}
+</style>
+<meta HTTP-EQUIV="Content-Type" Content="text-html; charset=Windows-1252">
+<title>404: Page Not Found</title>
+
+
+</head>
+
+<SCRIPT>
+
+	function doNetDetect() {
+
+		saOC.NETDetectNextNavigate();
+		location.reload();
+
+		}
+</SCRIPT>
+
+<body bgcolor="white">
+<object id=saOC CLASSID='clsid:B45FF030-4447-11D2-85DE-00C04FA35C89' HEIGHT=0 width=0></object>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="52%"> 
+<table width="400" cellpadding="3" cellspacing="5">
+        <tr> 
+          <td id="tableProps2" align="left" valign="middle" width="360"><h1 id="textSection1"
+    style="COLOR: black; FONT: 13pt/15pt verdana"><span id="errorText"><img src="/14jammar/img/i.gif" width="25" height="33" align="left">The page cannot be found </span></h1></td>
+        </tr>
+        <tr> 
+          <td id="tablePropsWidth" width="400" colspan="2"><font
+    style="COLOR: black; FONT: 8pt/11pt verdana">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable</font></td>
+        </tr>
+        <tr> 
+          <td id="tablePropsWidth" width="400" colspan="2"><font id="LID1"
+    style="COLOR: black; FONT: 8pt/11pt verdana"> 
+            <hr color="#C0C0C0" noshade>
+            <p id="LID2">Please try the following:</p>
+            <ul>
+              <li id="instructionsText1">If you typed the page address in the Adress bar, make sure that it is spelled correctly.<br>
+              </li>
+              <li id="instructionsText2">Open the <a href="http://owlman.neocities.org/14jammar"><font color="red">14jammar.neocities.org</font></a> home page, and then look for links to the information you want.
+              </li>
+              <li id="instructionsText3">Click the <img src="/14jammar/img/arrow_left.gif"> <a href="http://owlman.neocities.org/14jammar/Home.html"><font color="red">Back</font></a> button to try another link.<br>
+                         <li id="instructionsText5">Click <img src="/14jammar/img/Glass_Earth.gif"> <a href="http://owlman.neocities.org/14jammar/Search.html"><font color="red">Search</font></a> to look for information on the Internet.</li>
+
+            </ul>
+            <p><br>
+            </p>
+            <h2 id="IEText" style="font:8pt/11pt verdana; color:black">HTTP 404 - File not found<BR>
+              Internet Exploder </h2>
+            </font></td>
+        </tr>
+      </table></td>
+    <td width="48%" valign="top"><div align="right">
+</div></td>
+  </tr>
+</table>
+</body>
+</html>

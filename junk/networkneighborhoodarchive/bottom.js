@@ -1,0 +1,1 @@
+document.write('<hr><p>All rights go to the <a href="https://networkneighborhood.neocities.org/">Network Neighborhood</a>.</p>');

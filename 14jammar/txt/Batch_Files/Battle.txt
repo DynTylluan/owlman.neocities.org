@@ -1,0 +1,1113 @@
+@echo off
+
+mode con cols=300
+
+mode con lines=300
+
+title Animal Game
+goto start
+:start
+color 79
+cls
+set /p a=Name:
+goto aop
+:aop
+cls
+echo 1)eagle
+echo 2)panther
+echo 3)wolf
+echo 4)giant snake
+echo 5)penguin
+set /p c=animal type:
+if %c%==1 goto eagle
+if %c%==2 goto panther
+if %c%==3 goto wolf
+if %c%==4 goto snake
+if %c%==5 goto penguin
+if %c%==mika goto baby
+if %c%==boo goto boo
+if %c%==fox goto fox
+if %c%== ' ' goto start
+if not c==%c% goto aop
+:wat
+cls
+set /p b=Animal Name:
+pause
+set /a focus=2
+set /a money=0
+set /a animallvl=(%lvl% + 3) 
+set prize1=0
+goto cityop
+:cityop
+cls
+echo 1)home
+echo 2)battle
+echo 3)tournament
+echo 4)upgrade your animal
+set /p op=Choose an option:
+if %op%==1 goto home
+if %op%==2 goto load1
+if %op%==3 goto load2
+if %op%==4 goto upgrades
+if %op%==mika set /a money+=101
+:load1
+cls
+echo Loding...
+ping -w 192.168.1.22 09 >nul
+goto battle
+:load2
+cls
+echo Loding...
+ping -w 192.168.1.22 09 >nul
+goto tournament
+:home
+set /a animallvl=%lvl% + 3
+cls
+echo %a%
+echo lvl(%lvl%)
+echo bal(%money%)
+echo animal(%b% the %c%)
+echo animallvl(%animallvl%)
+pause
+goto cityop
+:battle
+setlocal ENABLEDELAYEDEXPANSION
+set /a r=%random% %%!16 +1
+::dob Bob lob mob BURP woho
+if '%r%' == '0' (
+    set wild=dob
+    set wildlvl=2
+    goto battle1
+)
+if '%r%' == '1' (
+    set wild=Bob
+    set wildlvl=3
+    goto battle1
+)
+if '%r%' == '2' (
+    set wild=slob
+    set wildlvl=3
+    goto battle1
+)
+if '%r%' == '3' (
+    set wild=blob
+    set wildlvl=4
+    goto battle1
+)
+if '%r%' == '4' (
+    set wild=BURP
+    set wildlvl=5
+    goto battle1
+)
+if '%r%' == '5' (
+    set wild=wo ho
+    set wildlvl=20
+    goto battle1
+)
+if '%r%' == '6' (
+    set wild=fluffy
+    set wildlvl=50
+    goto battle1
+)
+if '%r%' == '7' (
+    set wild=snoopy
+    set wildlvl=4
+    goto battle1
+)
+if '%r%' == '8' (
+    set wild=noodle
+    set wildlvl=3
+    goto battle1
+)
+if '%r%' == '9' (
+    set wild=MiKaChU! ! !
+    set wildlvl=%random%
+    goto battle1
+)
+if '%r%' == '10' (
+    set wild=donut
+    set wildlvl=7
+    goto battle1
+)
+if '%r%' == '11' (
+    set wild=ploopy
+    set wildlvl=7
+    goto battle1
+)
+if '%r%' == '12' (
+    set wild=lody
+    set wildlvl=6
+    goto battle1
+)
+if '%r%' == '13' (
+    set wild=apple
+    set wildlvl=0.1
+    goto battle1
+)
+if '%r%' == '14' (
+    set wild=^^POODY^^
+    set wildlvl=%random%
+    goto battle1
+)
+if '%r%' == '15' (
+    set wild=hubble*bubble
+    set wildlvl=19
+    goto battle1
+)
+if '%r%' == '16' (
+    set wild=holy cow
+    set wildlvl=30
+    goto battle1
+)
+if '%r%' == '17' (
+    set wild=moody
+    set wildlvl=1
+    goto battle1
+)
+:battle1
+set /a wildhp=%wildlvl% * 5
+set /a wildat=%wildlvl% * 2
+set /a animalhp=%animallvl% * 5
+goto battle2
+:battle2
+if %wildhp% lss 0 goto win
+if %animalhp% lss 0 goto loose
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+cls
+echo \---------------------------------------------------\
+echo  \    %wildhp%               %wild%        %wildlvl% \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p bat=Choose an option:
+if %bat%==1 goto bat1
+if %bat%==2 goto bat2
+if %bat%==3 goto cityop
+:bat1
+set /a wildhp-=%at1%
+set /a animalhp-=%wildat%
+goto battle2
+:bat2
+set /a wildhp-=%at2%
+set /a animalhp-=%wildat%
+goto battle2
+
+:win
+set /a lvl=%lvl% + (%wildlvl% /3)
+set /a animalhp=%animallvl% * 5
+set /a wildhp=%wildlvl% * 5
+set /a money+=%wildlvl% * 3
+cls
+echo You win!
+pause
+goto cityop
+:loose
+set /a animalhp=%animallvl% * 5
+set /a wildhp=%wildlvl% * 5
+cls
+echo You loose!
+pause
+goto cityop
+ :eagle
+ set c=eagle
+ set at1=swoop
+ set at2=screech
+ set lvl=1
+ set /a swoop=%animallvl% * 2
+ set /a screech=%animallvl% * 2
+ set /a animalhp=%animallvl% * 5
+ goto wat
+ :panther
+ set c=panther
+ set at1=pounce
+ set at2=claw
+ set lvl=1
+ set /a pounce=%animallvl% * 2
+ set /a claw=%animallvl% * 2
+ set /a animalhp=%animallvl% * 5
+ goto wat
+ :wolf
+ set c=wolf
+ set at1=howl
+ set at2=bite
+ set lvl=1
+ set /a howl=%animallvl% * 2
+ set /a bite=%animallvl% * 2
+ set /a animalhp=%animallvl% * 5
+ goto wat
+ :snake
+ set c=snake
+ set at1=fangs
+ set at2=venom
+ set lvl=1
+ set /a fangs=%animallvl% * 2
+ set /a venom=%animallvl% * 2
+ set /a animalhp=%animallvl% * 5
+ goto wat
+ :penguin
+ set c=penguin
+ set at1=fliper
+ set at2=ice_slide
+ set lvl=1
+ set /a fliper=%animallvl% * 2
+ set /a ice_slide=%animallvl% * 2
+ set /a animalhp=%animallvl% * 5
+ goto wat
+ :baby
+ set c=baby
+ set at1=wine
+ set at2=cry
+ set lvl=10000000
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a animalhp=%animallvl% * 5
+ goto wat
+ :fox
+ set c=fox
+ set at1=sneak
+ set at2=burrow
+ set lvl=3
+ set /a sneak=%animallvl% * 3
+ set /a burrow=%animallvl% * 3
+ set /a animalhp=%animallvl% * 5
+ goto wat
+ 
+ :boo
+  set c=boo
+  set lvl=10000000
+ set at1=boo
+ set at2=hoo
+ set /a boo=%animallvl% * 2
+ set /a hoo=%animallvl% * 2
+ set /a animalhp=%animallvl% * 5
+ goto wat
+ 
+ :upgrades
+ cls
+ if %money% gtr 100 goto up1
+ if %money% lss 100 goto notmoney
+ :notmoney
+ cls
+ echo Not enough m0ney
+ pause
+ goto cityop
+ :goodtogo
+  cls
+ echo Thank you for coming!
+ pause
+ goto cityop
+ :up1
+ echo 1)upgrade %at1%
+ echo 2)upgrade %at2%
+ echo 3)leave
+ set /p uop1=Choose an option:
+ if %uop1%==1 goto upop
+ if %uop1%==2 goto up2op
+ if %uop1%==3 goto cityop
+ if not %uop1%==uop1 goto upgrades
+ :upop
+ if %c%==eagle goto upa
+ if %c%==panther goto upb
+ if %c%==wolf goto upc
+ if %c%==snake goto upd
+ if %c%==penguin goto upe
+ if %c%==fox goto upf
+ :up2op
+ if %c%==eagle goto upa2
+ if %c%==panther goto upb2
+ if %c%==wolf goto upc2
+ if %c%==snake goto upd2
+ if %c%==penguin goto upe2
+ if %c%==fox goto upf2
+ :upa
+ cls
+ set /a focus=%focus% + 2
+ set at1=floop
+ set /a floop=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upb
+ set /a focus=%focus% + 2
+ set at1=furry_leap
+ set /a furry_leap=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upc
+ set /a focus=%focus% + 2
+ set at1=moon_howl
+ set /a moon_howl=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upd
+ set /a focus=%focus% + 2
+ set at1=constrict
+ set /a constrict=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upe
+ set /a focus=%focus% + 2
+ set at1=waddle
+ set /a waddle=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upf
+ set /a focus=%focus% + 2
+ set at1=stealth
+ set /a stealth=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upa2
+ set /a focus=%focus% + 2
+ set at2=sonic_screech
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upb2
+ set /a focus=%focus% + 2
+ set at2=jungle_scratch
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upc2
+ set /a focus=%focus% + 2
+ set at2=moon_claws
+ set /a moon_claws=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upd2
+ set /a focus=%focus% + 2
+ set at2=paralyze
+ set /a paralyze=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upe2
+ set /a focus=%focus% + 2
+ set at2=glacier
+ set /a glacier=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ :upf2
+ set /a focus=%focus% + 2
+ set at2=callbabyfoxes
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a money-=100
+ goto goodtogo
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ :twin
+ set /a lvl+=(%tlvl% / 3)
+set /a animalhp=%animallvl% * 5
+set /a thp=%tlvl% * 5
+set /a money+=%tlvl% * 3
+set /a prize1=%prize1% + 1
+cls
+echo You win!
+pause
+goto cityop
+
+  :tournament
+ set /a testat=%tlvl% * 2 
+ set /a thp=%tlvl% * 5
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ goto turnop
+ 
+ :turnop
+if %prize1%==0 goto d1
+if %prize1%==1 goto d2
+if %prize1%==2 goto d3
+if %prize1%==3 goto d4
+if %prize1%==4 goto d5
+if %prize1%==5 goto d6
+if %prize1%==6 goto d7
+if %prize1%==7 goto d8
+if %prize1%==8 goto d9
+if %prize1%==9 goto d10
+if %prize1% gtr 9 goto d11
+:d1
+    set t1=Stormy the hawk
+    set tlvl=23
+	set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+    goto test1
+:d2
+    set t2=Zink the leapord
+    set tlvl=34
+    set /a thp=%tlvl% * 5
+    set /a animalhp=%animallvl% * 5
+    goto test2
+:d3
+    set t3=Boty the coyote
+    set tlvl=45
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test3
+:d4
+    set t4=Borse the polorbear
+    set tlvl=57
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test4
+:d5
+    set t5=Snoorp the gecko
+    set tlvl=78
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test5
+:d6
+    set t6=Daphy the dolphin
+    set tlvl=93
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test6
+:d7
+    set t7=Goomba the octapus
+    set tlvl=80
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test7
+:d8
+    set t8=Haly the giraff
+    set tlvl=130
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test8
+:d9
+    set t9=Lady the ladybug
+    set tlvl=300
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test9
+:d10
+    set t10=Germy the germ
+    set tlvl=666
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test10
+:d11
+    set t10=Poody the poodian
+    set /a tlvl=%random% * 10
+set /a thp=%tlvl% * 5
+	set /a animalhp=%animallvl% * 5
+	    goto test10
+:test1
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t1%        %tlvl%         \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat1
+if %top%==2 goto tat1
+if %top%==3 goto cityop
+
+:test2
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t2%        %tlvl%         \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat2
+if %top%==2 goto tat2
+if %top%==3 goto cityop
+
+:test3
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t3%        %tlvl%         \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat3
+if %top%==2 goto tat3
+if %top%==3 goto cityop
+
+:test4
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t4%        %tlvl%        \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat4
+if %top%==2 goto tat4
+if %top%==3 goto cityop
+
+:test5
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t5%        %tlvl%         \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat5
+if %top%==2 goto tat5
+if %top%==3 goto cityop
+
+:test6
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t6%        %tlvl%        \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat6
+if %top%==2 goto tat6
+if %top%==3 goto cityop
+
+:test7
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t7%        %tlvl%         \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat7
+if %top%==2 goto tat7
+if %top%==3 goto cityop
+
+:test8
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t8%        %tlvl%        \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat8
+if %top%==2 goto tat8
+if %top%==3 goto cityop
+
+:test9
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t9%        %tlvl%         \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat9
+if %top%==2 goto tat9
+if %top%==3 goto cityop
+
+:test10
+if %thp% lss 0 goto twin
+if %animalhp% lss 0 goto loose
+ cls
+echo \---------------------------------------------------\
+echo  \    %thp%               %t10%        %tlvl%        \
+echo   \---------------------------------------------------\
+echo.
+echo.
+echo.
+echo \---------------------------------------------------\
+echo  \    %animalhp%        %b%      %animallvl%         \
+echo   \---------------------------------------------------\
+echo 1)%at1% 
+echo 2)%at2%
+echo 3)run
+set /p top=Choose an option:
+if %top%==1 goto tat10
+if %top%==2 goto tat10
+if %top%==3 goto cityop
+
+ :tat1
+ set /a testat=%tlvl% * 2 
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test1
+ :tat2
+ set /a testat=%tlvl% * 2 
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test2
+ :tat3
+ set /a testat=%tlvl% * 2 
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test3
+ :tat4
+ set /a testat=%tlvl% * 2 
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test4
+ :tat5
+ set /a testat=%tlvl% * 2 
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test5
+ :tat6
+ set /a testat=%tlvl% * 2 
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test6
+ :tat7
+ set /a testat=%tlvl% * 2 
+set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test7
+ :tat8
+ set /a testat=%tlvl% * 2 
+set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test8
+ :tat9
+ set /a testat=%tlvl% * 2 
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test9
+ :tat10
+ set /a testat=%tlvl% * 2 
+ set /a swoop=%animallvl% * %focus%
+ set /a screech=%animallvl% * %focus%
+ set /a pounce=%animallvl% * %focus%
+ set /a claw=%animallvl% * %focus%
+ set /a howl=%animallvl% * %focus%
+ set /a bite=%animallvl% * %focus%
+ set /a fangs=%animallvl% * %focus%
+ set /a venom=%animallvl% * %focus%
+ set /a fliper=%animallvl% * %focus%
+ set /a ice_slide=%animallvl% * %focus%
+ set /a wine=%animallvl% * 10
+ set /a cry=%animallvl% * 10
+ set /a boo=%animallvl% * 10
+ set /a hoo=%animallvl% * 10
+ set /a floop=%animallvl% * %focus%
+ set /a furry_leap=%animallvl% * %focus%
+ set /a moon_howl=%animallvl% * %focus%
+ set /a constrict=%animallvl% * %focus%
+ set /a waddle=%animallvl% * %focus%
+ set /a sonic_screech=%animallvl% * %focus%
+ set /a jungle_scratch=%animallvl% * %focus%
+ set /a moon_claws=%animallvl% * %focus%
+ set /a paralyze=%animallvl% * %focus%
+ set /a glacier=%animallvl% * %focus%
+ set /a sneak=%animallvl% * %focus%
+ set /a burrow=%animallvl% * %focus%
+ set /a stealth=%animallvl% * %focus%
+ set /a callbabyfoxes=%animallvl% * %focus%
+ set /a thp-=%at1%
+ set /a animalhp-=%testat%
+ goto test10

@@ -1,0 +1,94 @@
+<link rel="icon" type="image/png" href="/14jammar/img/14.png" />
+<!DOCTYPE html>
+<html>
+<head>
+<body style="background-image:url(/14jammar/img/wall.gif)">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Pay Timer</title>
+	<style type="text/css" media="screen">
+		h1 {font-family:'Georgia';margin-top:4px;}
+		p {font-family:helvetica;font-size:20px;font-weight:lighter;margin:0 0 12px 0;}
+	</style>
+</head>
+<body>
+	<h1>Watch That Money Roll In</h1>
+	<table border="0" cellspacing="5" cellpadding="0">
+		<tr>
+			<td>
+				<p>Current Time:</p>
+			</td>
+			<td align="right">
+				<p><span id="time"></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>Time Passed:</p>
+			</td>
+			<td align="right">
+				<p><span id="timer"></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>Money Earned:</p>
+			</td>
+			<td align="right">
+				<p><span id="pay"></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					<label for="wage">Wage</label>
+				</p>
+			</td>
+			<td align="right">
+				<p>
+					<input type="number" name="wage" value="0" id="wage" />
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p>
+		<button id="start_timer" onclick="start_timer();">Reset Timer</button>
+	</p>
+	<script type="text/javascript" charset="utf-8">
+		var start, timer_id;
+		
+		// Start it up
+		start_timer();
+			
+		function start_timer() {
+			start = new Date();
+			timer();	
+			if (timer_id) {
+				clearInterval(timer_id);
+			}
+			timer_id = setInterval(function(){timer()},500);
+		}
+		
+		function leadingZero(num) {
+			(String(num).length < 2) ? num = String("0" + num) :  num = String(num);
+			return num;
+		}
+		
+		function timer() {
+			var wage = document.getElementById('wage').value;
+			var now = new Date();
+			// Change in seconds
+			var change = (now-start)/1000;
+			
+			var hours = leadingZero(parseInt( change / 3600 ) % 24);
+			var minutes = leadingZero(parseInt( change / 60 ) % 60);
+			var seconds = leadingZero((change % 60).toFixed(0));
+			var formatted_time = now.toLocaleTimeString();
+			document.getElementById('time').innerHTML = formatted_time;
+			document.getElementById('timer').innerHTML = hours+':'+minutes+':'+seconds;
+			document.getElementById('pay').innerHTML = '$'+((change)*wage/60/60).toFixed(2);
+		}
+	</script>
+<P><img src="http://i.imgur.com/rvcZl00.png?1">
+<tt><P><font size="3"> "Pay Timer" was made by <a href="https://github.com/grimmdude">Garrett Grimm</a> for the website <a href="http://grimmdude.neocities.org/">grimmdude.neocities.org
+</body>
+</html>

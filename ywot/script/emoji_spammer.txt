@@ -1,0 +1,1 @@
+http://javascript:a=prompt("Emoji spammer. enter emoji");I=$("input")[2];$(window).click(function(){setInterval(function(){for(b=0,c="",a=a+"",f=a.length,d=/[\uD800-\uDBFF][\uDC00-\uDFFF]/g;null!=d.exec(a);)if(d.lastIndex-2<b)b++;else break;b>=f||0>b?ab="":(c+=a.charAt(b),/[\uD800-\uDBFF]/.test(c)&&/[\uDC00-\uDFFF]/.test(a.charAt(b+1))&&(c+=a.charAt(b+1)),ab=c);I.value=ab},1)});

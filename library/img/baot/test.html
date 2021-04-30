@@ -1,0 +1,372 @@
+<html>
+  <head>
+  <link rel="icon" type="image/png" href="http://owlman.neocities.org/img/OM_Logo.gif" />
+  <title>Bad Art or Just Troll? | OWLMAN</title>
+  <body background="https://owlman.neocities.org/img/dump/green.png">
+<center>
+<BODY BGCOLOR="#cccccc" TEXT="#ffffff" LINK="#ffffff" ALINK="#ffffff" VLINK="#ffffff">
+<p><font size="6">Bad Art or Just Troll?</a>
+<font size="5"> <P>By Clive Python | 14jammar<font size="4"><P>
+<TABLE WIDTH=750><TD VALIGN=TOP>
+
+<!-- The OwlMan Library is composed of original material and may      -->
+<!-- be used aslong as one follows CC BY-NC-SA 3.0                    -->
+<!-- http://owlman.neocities.org/library/                             -->
+<!--                                                                  -->
+<!-- Copyright (C) 2017 Clive "James" Python                          -->
+<!-- Some rights reserved                                             -->
+<!--                                                                  -->
+<!-- E-mail: owlman at protonmail dot com                             -->
+<!-- And yeah, I like Rotten Dot Com's Library                        -->
+</center>
+
+
+
+
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v3.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+
+var answer = new Array("dummy",true,true,false,true,true,true,true,true,false,false);
+var topsize=10;
+
+var texty = new Array(
+"Sorry to say, but you got zero right. Do you not know art?",
+"One out of ten. Go home, you're drunk.",
+"Three out of ten. Christ I would goto an art show ASAP.",
+"Four. Yeah... it's bad...",
+"Half right. I mean, you're half way there.",
+"Not bad.",
+"Hey, seven, that's alright!",
+"You're quite good at this!",
+"OMG U KNOW UR ART!",
+"zOME! IS DEVIANTART UR HOMEPAGE?");
+
+function ResetQuiz()
+{
+var count=0;
+while (count++<topsize)
+ {
+ eval("document.a"+count+".src='none.png'");
+ eval("document.l"+count+".src='none.png'");
+ eval("document.woo.s" + count + "[0].disabled=false");
+ eval("document.woo.s" + count + "[1].disabled=false");
+ eval("document.woo.s" + count + "[0].checked=false");
+ eval("document.woo.s" + count + "[1].checked=false");
+ MM_showHideLayers('text'+count,'','hide');
+ }
+}
+
+
+function check()
+{
+
+var count=0;
+var score=0;
+var finished=0;
+
+while (count++<topsize)
+
+  {
+
+  if ((eval("document.woo.s" + count + "[0].checked")) ||
+     (eval("document.woo.s" + count + "[1].checked")))
+
+    {
+     if ((eval("document.woo.s" + count + "[0].checked")) ==  answer[count])
+     {score++;eval("document.a"+count+".src='tick.png'");}
+     else
+     {eval("document.a"+count+".src='cross.png'");}
+
+     eval("document.woo.s" + count + "[0].disabled='true'");
+     eval("document.woo.s" + count + "[1].disabled='true'");
+
+     if (answer[count])
+        {eval("document.l"+count+".src='real.png'");}
+        else
+        {eval("document.l"+count+".src='fake.png'");}
+     finished++; 
+    MM_showHideLayers('text'+count,'','show');
+    }
+
+  }
+
+if (finished==topsize)
+{
+alert(texty[score]+"\n\n"+"You scored "+score+"/"+topsize+"\n\nPressing OK will restart the quiz.");
+location.href="#";
+ResetQuiz();
+}
+
+}
+
+</script>
+
+
+<SCRIPT LANGUAGE="JavaScript"> 
+var MSIE=navigator.userAgent.indexOf("MSIE"); 
+var NETS=navigator.userAgent.indexOf("Netscape"); 
+var OPER=navigator.userAgent.indexOf("Opera"); 
+if((MSIE>-1) || (OPER>-1)) { 
+document.write("<BGSOUND SRC=woman.mid LOOP=255>"); 
+} else { 
+document.write("<EMBED SRC=woman.mid AUTOSTART=TRUE "); 
+document.write("HIDDEN=true VOLUME=30 LOOP=YES>"); 
+} 
+</SCRIPT> 
+
+
+
+
+
+</head>
+
+
+<img src="https://owlman.neocities.org/library/img/baot/logo2.png" width=640 height=144>
+
+
+
+
+<table width=640 cellpadding=0 cellspacing=0 border=0>
+
+<tr><td colspan="3" align="middle"><b>Look at each image. Click the circles to select Real or Troll.</b><br>
+<small>DeviantART is such a great place full of great artwork, but, for every one good piece of art, there is 500 bad ones. Today, we will
+be looking at the age old question: Bad Art or Just Troll?</small>
+<br><br></td></tr>
+
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/1.png" width=150 height=150 align=left></td>
+<td><b>Sexy Lady!</b><br>
+Real <input type=radio onClick="check()" name=s7 value=female><br>
+Troll <input type=radio onClick="check()" name=s7 value=shemale><br>
+<img src="none.png" name="a7"><br>
+<img src="none.png" name="l7" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text7" style="visibility: hidden;">
+This amazing piece of artwork was done by DA user <a href="http://mr-pink-rose.deviantart.com/art/Gray-is-gorgeous-421769990">Mr-Pink-Rose</a> with their grand art; Gray is Gorgeous
+</div>
+</td>
+</tr>
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/2.png" width=150 height=150 align=left></td>
+<td><b>Homar is is lookin' good</b><br>
+Real <input type=radio onClick="check()" name=s1 value=female><br>
+Troll <input type=radio onClick="check()" name=s1 value=shemale><br>
+<img src="none.png" name="a1"><br>
+<img src="none.png" name="l1" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text1" style="visibility: hidden;">
+What can I say about this modern day masterpiece? When Matt Groening first made The Simpsons I feel like he had no idea that gifted people such as <a href="http://ctdsnark.deviantart.com/art/pepper-boys-165394974">ctdsnark</A>, like would out-master him.
+</div>
+</td>
+</tr>
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr><td><img src="https://owlman.neocities.org/library/img/baot/3.png" width=150 height=150 align=left></td>
+<td><b>God bless Sonic fans.</b><br>
+Real <input type=radio onClick="check()" name=s6 value=female><br>
+Troll <input type=radio onClick="check()" name=s6 value=shemale><br>
+<img src="none.png" name="a6"><br>
+<img src="none.png" name="l6" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text6" style="visibility: hidden;">
+I myself am not a religious person at all, however, artwork like this by <a href="http://ccmsonicfan.deviantart.com/art/Pray-Sonic-Boom-581517453">CCMSonicFan</A> really questions me on if God is real.</div>
+</td>
+</tr>
+
+
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/4.png" width=150 height=150></td>
+<td><b>Hail Freddy</b><br>
+Real <input type=radio onClick="check()" name=s5 value=female><br>
+Troll <input type=radio onClick="check()" name=s5 value=shemale><br>
+<img src="none.png" name="a5"><br>
+<img src="none.png" name="l5" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text5" style="visibility: hidden;">
+The horror of war is truly captured by <a href="http://xflame-the-foxx.deviantart.com/art/Brown-on-the-Outside-but-Nazi-Within-687336483">XFlame-The-FoxX</A> in this truly shocking artwork by ...
+</div>
+</td>
+</tr>
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/5.png" width=150 height=150 align=left></td>
+<td><b>Shoot to kill!</b><br>
+Real <input type=radio onClick="check()" name=s2 value=female><br>
+Troll <input type=radio onClick="check()" name=s2 value=shemale><br>
+<img src="none.png" name="a2"><br>
+<img src="none.png" name="l2" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text2" style="visibility: hidden;">
+Okay, this one was very easy for Sonichu fans like myself. Yep, that's right, <a href="https://sonichu.com/cwcki/File:444-MecheFox.JPG">Christine Weston Chandler</A> made this bad boy herself!
+</div>
+</td>
+</tr>
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/6.png" width=150 height=150 align=left></td>
+<td><b>Give me mora</b><br>
+Real <input type=radio onClick="check()" name=s3 value=female><br>
+Troll <input type=radio onClick="check()" name=s3 value=shemale><br>
+<img src="none.png" name="a3"><br>
+<img src="none.png" name="l3" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text3" style="visibility: hidden;">
+Moden art is often looked down upon as of lately, it's a shame that art like this is pushed over as fetish art. It is not fetish art. It shows the growing increase of goods given to the West by the rest of the world. Very thought provoking. Thank you <a href="http://jeikutwo.deviantart.com/art/Stuffing-Blanco-611602258">Jeikutwo</a> for making this!
+</div>
+</td>
+</tr>
+
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/7.png" width=150 height=150 align=left></td>
+<td><b>HE IS THE PAINKILLER!</b><br>
+Real <input type=radio onClick="check()" name=s8 value=female><br>
+Troll <input type=radio onClick="check()" name=s8 value=shemale><br>
+<img src="none.png" name="a8"><br>
+<img src="none.png" name="l8" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text8" style="visibility: hidden;">
+Rock on! It's gay icon and Judas Preast front man, Rob Helford! If Rob ever sees this, I am sure they will put it on their next album cover. Credit to <a href="http://tsf-firewindhorse.deviantart.com/art/LGBTQ-icons-672330685">TSF-FirewindHorse</a> on this one.
+</div>
+</td>
+</tr>
+
+
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/8.png" width=150 height=150 align=left></td>
+<td><b>True love </b><br>
+Real <input type=radio onClick="check()" name=s9 value=female><br>
+Troll <input type=radio onClick="check()" name=s9 value=shemale><br>
+<img src="none.png" name="a9"><br>
+<img src="none.png" name="l9" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text9" style="visibility: hidden;">
+Shocking artwork here by <a href="http://pingthehungryfox.deviantart.com/art/Two-Foxes-and-A-Human-Exterior-601014786">PingTheHungryFox</a>. Truly makes you think about the horrors surrounding the modern day body image. Makes you think.<div>
+</tr>
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/9.png" width=150 height=150 align=left></td>
+<td><b>Shrek looks fine AF</b><br>
+Real <input type=radio onClick="check()" name=s4 value=female><br>
+Troll <input type=radio onClick="check()" name=s4 value=shemale><br>
+<img src="none.png" name="a4"><br>
+<img src="none.png" name="l4" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text4" style="visibility: hidden;">
+What can I say? It speaks for itself. Art by <a href="http://cumthulu.deviantart.com/art/Sherk-2-Hell-on-Earth-614864092">Cumthulu</a>.
+</div>
+</td>
+</tr>
+
+
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td><img src="https://owlman.neocities.org/library/img/baot/10.png" width=150 height=150 align=left></td>
+<td><b>Every cat has his day</b><br>
+Real <input type=radio onClick="check()" name=s10 value=female><br>
+Troll <input type=radio onClick="check()" name=s10 value=shemale><br>
+<img src="none.png" name="a10"><br>
+<img src="none.png" name="l10" width="86" height="62">
+</td>
+<td valign="top">
+<div id="text10" style="visibility: hidden;">
+This cat has seen things... by <a href="http://scarlettathecat.deviantart.com/art/Happy-Birthday-Jon-Arbuckle-624491837">ScarlettaTheCat</A>.
+</div>
+</td>
+</tr>
+
+
+
+
+
+
+<tr><td colspan="3"><hr size="1"></td></tr>
+
+<tr>
+<td colspan="3">
+
+<INPUT TYPE="RESET" VALUE="Reset Quiz" onClick="ResetQuiz()">
+ 
+
+</td>
+</tr>
+</table>
+
+</form>
+
+
+<p>
+Code nicked from Rob Manuel of <a href=http://www.b3ta.co.uk/>b3ta</A>.
+<P>
+For use of art on this page, please see our <a href="copyright.html">copyright page</A>.
+<P>
+
+<img src="tick.png" width="1" height="1"><img src="cross.png" width="1" height="1"><img src="real.png" width="1" height="1"><img src="fake.png" width="1" height="1">
+
+
+</body>
+</html>

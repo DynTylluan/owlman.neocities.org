@@ -1,0 +1,39 @@
+Title                   : Hockey.wad   
+Filename                : hockey.WAD
+Author                  : Eric Harris
+Email Address           : Rebldomakr@aol.com & REBDOOMER@aol.com
+Misc. Author Info       : It took me about an hour and a half to
+                          make this wad, so it isnt really all 
+                          that great.  It does kick some serious
+                          ass though!
+Description             : A deathmatch level based on a hockey 
+                          rink.  With an outer area along the
+                          rink.
+Additional Credits to   : The creators of Edmap, BSP and NWT.
+                          And, of course, the creators of DOOM2!
+
+Episode and Level #     : map01
+Single Player           : Yes
+Cooperative 2-4 Player  : I guess, to go sight-seeing
+Deathmatch 2-4 Player   : YES
+Difficulty Settings     : Not implemented
+New Sounds              : yes
+New Graphics            : naaaaa
+New Music               : Nope
+Demos Replaced          : None
+
+Base                    : New level from scratch
+Editor(s) used          : Edmap, BSP, and NWT
+Known Bugs              : Well, I can't find any yet. e-mail me if
+                          you come across one!
+
+
+
+Authors may NOT use this level as a base to build additional
+levels.  
+
+Don't do anything but play it and give it to your friends.
+
+Where to get this:  Well, probably where you got it from. duh.  Or 
+email me and ask for it.
+      -note  Ask for my awesome WAD called, REALDOOM.zip!!!!
